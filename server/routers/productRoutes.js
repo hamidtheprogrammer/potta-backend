@@ -17,14 +17,15 @@ const allowedOrigins = [
 productRoutes.use(
   cors({
     credentials: true,
-    origin: function (origin, callback) {
-      // Check if the origin is in the allowed origins array
-      if (allowedOrigins.includes(origin) || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: "*",
+    //  function (origin, callback) {
+    //   // Check if the origin is in the allowed origins array
+    //   if (allowedOrigins.includes(origin) || !origin) {
+    //     callback(null, true);
+    //   } else {
+    //     callback(new Error("Not allowed by CORS"));
+    //   }
+    // },
   })
 );
 
